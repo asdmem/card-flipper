@@ -1,0 +1,21 @@
+<section class='table' [ngClass]='{"no-click": disableTable}'>
+  <div class=' card-holder' *ngFor='let cardHolder of deck'>
+<hoodies-card-component #card (click)='openCard(cardHolder)' *ngIf='cardHolder.status !== "solved"'
+                        [card]='cardHolder.card' class='card'
+                        [isFrontVisible]='cardHolder.status === "flipped"'
+                        [ngClass]='{"no-click": cardHolder.status === "flipped"}'></hoodies-card-component>
+
+</div>
+</section>
+
+<section class='info'>
+  <hoodies-time-component #time></hoodies-time-component>
+  <button (click)='startGame()' class='start-btn'>Начать</button>
+  <div class='steps-text'>
+    <span class='text'>Количество шагов: </span>
+    <span class='steps'>{{steps}}</span>
+  </div>
+  <hoodies-records-component #records></hoodies-records-component>
+</section>
+
+<hoodies-won-component *ngIf='won' (saved)='records.load(); startGame()' [steps]='this.steps'></hoodies-won-component>

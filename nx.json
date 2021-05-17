@@ -25,6 +25,9 @@
     "card-game-e2e": {
       "tags": [],
       "implicitDependencies": ["card-game"]
+    },
+    "score-back": {
+      "tags": []
     }
   }
 }

@@ -1,0 +1,38 @@
+:host {
+  display: flex;
+}
+
+.table {
+  padding: 2rem;
+
+  display: inline-grid;
+  grid-template-columns: repeat(6, 65px);
+  grid-template-rows: repeat(6, 100px);
+  grid-column-gap: 100px;
+  grid-row-gap: 30px;
+
+  .card-holder {
+    border: 1px solid white;
+  }
+
+  .card {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.no-click {
+  pointer-events: none;
+}
+
+.start-btn {
+  border: none;
+  background: white;
+  padding: 0.5rem 2rem;
+}
+
+.steps-text {
+  padding: 0.5rem 0;
+
+  color: white;
+}
